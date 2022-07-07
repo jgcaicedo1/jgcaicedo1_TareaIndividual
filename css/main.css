@@ -1,0 +1,36 @@
+
+
+/* ==========================================================================
+   Author's custom styles 
+   1-Responsive sm,md,lg
+   2-Colocar un Menu Bar en la parte de arriba inverso Agrupado redusido Docente,Comandante,Grupos(Simbolo Pestaña(Grupo 1,Grupo 2,Grupo 3,...,Grupo 8),Buscar.
+   3-footer botones facebook,twitter, youtube
+   ========================================================================== */
+
+body{
+   font-size: 16px;
+}
+
+.mega-dropdown{
+   position: static !important;
+   width: 100%;
+}
+.mega-dropdown-menu{
+   padding: 20px 20px;
+   width: 100%;
+   box-shadow: none;
+   webkit-box-shadow: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="../../css/bootstrap.min.css">
+
+        <link rel="stylesheet" href="../../css/bootstrap-theme.min.css">
+        <link rel="stylesheet" href="../../css/iconmoon.css">
+        <link rel="stylesheet" href="../../css/main.css">
+
+        <script src="../../js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+  <title>Pregunta 2</title>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  <style type="text/css">
+    #background{position:absolute; width:99%; height:130%;}
+    #fixed {position:absolute; top: 0px; left: 0px;}
+  </style>
+</head>
+<body data-spy="scroll" data-target="#scrollspy" data-offset="1">
+    <nav class="navbar navbar-default navbar-fixed-top" id="scrollspy">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button class="navbar-toggle" data-toggle="collapse" data-target="#menu">
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+            </button>
+          <a href="../../index.html" class="navbar-brand">Tarea Individual</a>
+        </div>
+        <div class="collapse navbar-collapse" id="menu">
+          <ul class="nav navbar-nav">
+            <li><a href="#Ej">Ejecutable</a></li>
+            <li><a href="#Ca">Capturas</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  <div class="container" id="Ej">
+    <br><br><br>
+    <ul class="nav nav-tabs">
+      <li class="active"><a href="#Eje" data-toggle="tab">Ejecución</a></li>
+      <li><a href="#HT" data-toggle="tab">HTML</a></li>
+      <li><a href="#S" data-toggle="tab">Script</a></li>
+      <li><a href="#XML" data-toggle="tab">XML</a></li>
+    </ul>
+    <div class="tab-content">
+      <div class="tab-pane active" id="Eje" style="text-align:center;">
+        <div style="padding-top: 10%;background-image:url(../../Imagenes/fondo.jpg) ;background-size: cover;">
+          <img src="../../Imagenes/selloespe.jpg" width="65%" align="center">
+          <h1>Pregunta 2</h1>
+          <p>2)Mediante un archivo XML, analizar dicho archivo XML utilizando el siguiente Script:</p>
+          <ul style="list-style-type: none;">
+          <li>xmlhttp = new XMLHttpRequest();<br>
+            xmlhttp.open("GET", "ejemplo.xml", false);<br>
+            xmlhttp.send();<br>
+            xmlDoc = xmlhttp.responseXML;<br>
+          </li>
+          </ul>
+          <div class="section" id="enunciado" style="margin-top: 5%;" >
+          <button style="align-self: center;" type="button" onclick="CargarDatos()">Obtener Datos</button>
+          <div class="section" id="resolucion" style="margin-top: 5%;">
+          </div>
+          <div class="section" style="margin-top: 5%;">
+          </div>
+          </div>        
+        </div>
+      </div>
+      <div class="tab-pane" id="HT">
+        <br><br><br><br>
+        <img src="../../Imagenes/CP2.jpg" class="img-responsive" style="margin-left:auto;margin-right: auto;">
+      </div>
+      <div class="tab-pane" id="S">
+        <br><br><br><br>
+        <img src="../../Imagenes/SP2.jpg" class="img-responsive" style="margin-left:auto;margin-right: auto;">
+      </div>
+      <div class="tab-pane" id="XML">
+        <br><br><br><br>
+        <img src="../../Imagenes/XP2.jpg" class="img-responsive" style="margin-left:auto;margin-right: auto;">
+      </div>
+    </div>
+  </div>
+  <br><br><br>
+  <div class="container" id="Ca">
+    <h2><p style="color:#165014" ;>CAPTURAS PREGUNTA 2</p></h2>
+    <h3><p style="text-align: center;color:#165014" ;>Antes</p></h3>
+    <img src="../../Imagenes/Pregunta2.jpg" class="img-responsive" style="margin-left:auto;margin-right: auto;">
+    <br>
+    <h3><p style="text-align: center;color:#165014" ;>Despues</p></h3>
+    <img src="../../Imagenes/Pregunta22.jpg" class="img-responsive" style="margin-left:auto;margin-right: auto;">
+  </div>
+
+
+  <script>
+  xmlhttp = new XMLHttpRequest(); //Creacion del objeto XMLHttpRequest
+  xmlhttp.open("GET", "ejemplo.xml", false);//Enviar la solicitud para obtener el archivo ejemplo.xml
+  xmlhttp.send();
+  xmlDoc = xmlhttp.responseXML;//Funcion que va a ser llamada cuando la solicitud reciba una respuesta
+  //Funcion para recuperar los datos del txt
+  function CargarDatos() {
+    document.getElementById("resolucion").innerHTML = '';
+    const n = xmlDoc.getElementsByTagName("nombre");
+    for (var i = 0; i < n.length; i++) {
+      document.getElementById("resolucion").innerHTML += xmlDoc.getElementsByTagName("nombre")[i].childNodes[0].nodeValue+" come "+xmlDoc.getElementsByTagName("comida")[i].childNodes[0].nodeValue+"<br>";
+    }
+  }
+</script>
+  <script>window.jQuery || document.write('<script src="../../js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
+
+        <script src="../../js/vendor/bootstrap.min.js"></script>
+
+        <script src="../../js/main.js"></script> 
+</body>
+</html>
